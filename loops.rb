@@ -42,7 +42,14 @@ def get_answer(first_run)
     else
         print "Play the game again? Y/N: "
     end
-    return answer = gets.chomp.downcase
+
+    answer = gets.chomp.downcase
+ 
+    while answer != "y" and answer != "n"
+        print "Please enter only Y or N: "
+        answer = gets.chomp.downcase       
+    end
+    return answer
 end
 
 until get_answer(first_run) == "n"
@@ -65,7 +72,7 @@ until get_answer(first_run) == "n"
         end
         puts
     else
-        #More codes here
+        puts "Please enter e or o."
     end
     first_run = true
 end
