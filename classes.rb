@@ -1,10 +1,22 @@
 class Dog
+  def make_up_name
+    @name = "Sandy"
+  end
+
   def talk
-    puts "Bark!"
+    puts "#{@name} Barks!"
   end
 
   def move(destination)
-    puts "running to the #{destination}."
+    puts "#{@name} runs to the #{destination}."
+  end
+
+  def make_up_age
+    @age = 5
+  end
+
+  def report_age
+    puts "#{@name} is #{@age} years old."
   end
 end
 
@@ -29,13 +41,16 @@ class Bird
 end
 
 dog1 = Dog.new
-puts dog1.talk
-puts dog1.move("Carlo")
+# dog1.talk
+dog1.make_up_name
+dog1.move("yard")
+dog1.make_up_age
+dog1.report_age
 
-bird1 = Bird.new
-puts bird1.talk
-puts bird1.move("Carlo")
+# bird1 = Bird.new
+# puts bird1.talk
+# puts bird1.move("Carlo")
 
-cat1 = Cat.new
-puts cat1.talk
-puts cat1.move("Carlo")
+# cat1 = Cat.new
+# puts cat1.talk
+# puts cat1.move("Carlo")

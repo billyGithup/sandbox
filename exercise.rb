@@ -31,25 +31,42 @@
 # end
 
 # Challenge 1
-first_name = "Carlo"
-last_name = "Santos"
-saving = 3000000
-checking = 2000
+# first_name = "Carlo"
+# last_name = "Santos"
+# saving = 3000000
+# checking = 2000
 
-puts "#{first_name} #{last_name} has $%.2f" % checking + " in checking and $%.2f" % saving + " in saving."
+# puts "#{first_name} #{last_name} has $%.2f" % checking + " in checking and $%.2f" % saving + " in saving."
 
 #Challenge 2
-print "Please enter your first name: "
-first_name2 = gets.chomp
+# print "Please enter your first name: "
+# first_name2 = gets.chomp
 
-print "Please enter your last name: "
-last_name2 = gets.chomp
+# print "Please enter your last name: "
+# last_name2 = gets.chomp
 
-print "Please enter your saving balance: "
-saving2 = gets.chomp
+# print "Please enter your saving balance: "
+# saving2 = gets.chomp
 
-print "Please enter your checking balance: "
-checking2 = gets.chomp
+# print "Please enter your checking balance: "
+# checking2 = gets.chomp
 
-puts
-puts "#{first_name2.capitalize} #{last_name2.capitalize} has $%.2f" % checking2 + " in checking and $%.2f" % saving2 + " in saving."
+# puts
+# puts "#{first_name2.capitalize} #{last_name2.capitalize} has $%.2f" % checking2 + " in checking and $%.2f" % saving2 + " in saving."
+
+
+#3/16/2020
+#Challenge 1
+# print "Please enter your name: "
+# user_name = gets.chomp!
+
+# puts "Hello, #{user_name}!"
+
+#Challenge 2
+# print "Please enter a number (Eg. 55, 33, or 75): "
+# num_input = gets.chomp!.to_i
+
+# for num in 1..num_input
+#   print "#{num} " if num % 3 == 0
+# end
+# puts "These numbers are divisible by 3."
