@@ -77,9 +77,62 @@
 
 # puts is_palindrome("Civic")
 
-def make_out_word(two_symbols, word)
-  puts two_symbols.insert(-3, word)
+# def make_out_word(two_symbols, word)
+#   puts two_symbols.insert(-3, word)
+# end
+
+# make_out_word("<<>>", "Carlo")
+# make_out_word("[[]]", "Carlo")
+
+#03/17/2020
+#Challenge 1
+=begin
+def sleep_in(weekday, vacation)
+  if (weekday == true and vacation == true)
+    puts "Sleep in!"
+  elsif (weekday == true and vacation == false)
+    puts "Don't sleep in!"
+  elsif (weekday == false and vacation == true)
+    puts "Sleep in!"
+  elsif (weekday == false and vacation == false)
+    puts "Sleep in!"
+  end
 end
 
-make_out_word("<<>>", "Carlo")
-make_out_word("[[]]", "Carlo")
+sleep_in(false, false)
+sleep_in(true, false)
+sleep_in(false, true)
+sleep_in(true, true)
+=end
+
+#Challenge 2
+=begin
+def diff21(number)
+  num21 = 21
+
+  if number > num21
+    puts ((number - num21) * 2).abs
+  else
+    puts (number - num21).abs
+  end
+end
+
+diff21(19)
+diff21(10)
+diff21(21)
+=end
+
+#Challenge 3
+# =begin
+def near_hundred(number)
+  num100 = 100
+  num200 = 200
+  control_num = 10
+
+  ((num100 - number).abs <= control_num || (num200 - number).abs <= control_num) ? true : false
+end
+
+puts near_hundred(220)
+puts near_hundred(289)
+puts near_hundred(190)
+# =end
