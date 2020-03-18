@@ -71,3 +71,36 @@
 # end
 # puts "These numbers are divisible by 3."
 
+#03/18/2020
+#Problem 1
+=begin
+def first_last6(array)
+  (array.last == 6 || array.first == 6)
+end
+
+puts first_last6([1, 2, 6])
+puts first_last6([6, 1, 2, 3])
+puts first_last6([13, 6, 1, 2, 3])
+=end
+
+#Problem 2
+=begin
+def common_end(arr1, arr2)
+  (arr1.first == arr2.first || arr2.last == arr1.last)
+end
+
+puts common_end([1, 2, 3], [7, 3])
+puts common_end([1, 2, 3], [7, 3, 2])
+puts common_end([1, 2, 3], [1, 3])
+=end
+
+#Problem 3
+# =begin
+def rotateLeft3(array)
+  array.push(array.shift)
+end
+
+p rotateLeft3([1, 2, 3])
+p rotateLeft3([5, 11, 9])
+p rotateLeft3([7, 0, 0])
+# =end
