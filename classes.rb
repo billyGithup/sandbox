@@ -109,7 +109,7 @@ person1.occupation = "Software engineer"
 person1.print_info
 =end
 
-# =begin
+=begin
 class Mammal
   attr_accessor :hair, :diaphragm, :mammary_glands, 
                 :four_chambered_heart, :three_bones_in_the_middle_ear, :one_time_tooth_replacement, 
@@ -144,4 +144,32 @@ end
 dog = Mammal.new("Yes", "Yes", "Yes", "Yes", "Yes", "Yes (generally)", "Yes", "Yes")
 dog.print_info
 puts
+=end
+
+# =begin
+class Account
+  attr_accessor :account_holder, :account_type, :balance
+
+  def deposit(amount)
+    @balance += amount
+    puts "Balance is updated!"
+  end
+
+  def withdraw(amount)
+    @balance -= amount
+    puts "Balance is updated!"
+  end
+
+  def print_balance()
+    puts "#{@account_holder}, your current balance is $%.2f" % @balance
+  end
+end
+
+user1 = Account.new
+user1.account_holder = "Rose"
+user1.account_type = "Checking"
+user1.balance = 1000
+user1.deposit(1000)
+user1.withdraw(500)
+user1.print_balance
 # =end

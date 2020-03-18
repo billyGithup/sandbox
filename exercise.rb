@@ -95,7 +95,7 @@ puts common_end([1, 2, 3], [1, 3])
 =end
 
 #Problem 3
-# =begin
+=begin
 def rotateLeft3(array)
   array.push(array.shift)
 end
@@ -103,4 +103,4 @@ end
 p rotateLeft3([1, 2, 3])
 p rotateLeft3([5, 11, 9])
 p rotateLeft3([7, 0, 0])
-# =end
+=end
