@@ -129,10 +129,10 @@ def near_hundred(number)
   num200 = 200
   control_num = 10
 
-  ((num100 - number).abs <= control_num || (num200 - number).abs <= control_num) ? true : false
+  ((num100 - number).abs <= control_num || (num200 - number).abs <= control_num)
 end
 
-puts near_hundred(220)
-puts near_hundred(289)
-puts near_hundred(190)
+puts near_hundred(93)
+puts near_hundred(90)
+puts near_hundred(89)
 # =end
