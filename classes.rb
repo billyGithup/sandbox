@@ -146,7 +146,7 @@ dog.print_info
 puts
 =end
 
-# =begin
+=begin
 class Account
   attr_accessor :account_holder, :account_type, :balance
 
@@ -172,4 +172,4 @@ user1.balance = 1000
 user1.deposit(1000)
 user1.withdraw(500)
 user1.print_balance
-# =end
+=end
