@@ -152,5 +152,4 @@ contact_data.each do |array|
 end
 
 puts contacts
-=end
-
+# =end
