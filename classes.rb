@@ -173,3 +173,242 @@ user1.deposit(1000)
 user1.withdraw(500)
 user1.print_balance
 =end
+
+=begin
+class Employee
+  attr_reader :name
+
+  def initialize(name)
+    self.name = name
+  end
+
+  def name=(name)
+    if name == ""
+      raise "Name can't be blank!"
+    end
+    @name = name
+  end
+
+  def print_name
+    puts "Name: #{name}"
+  end
+
+  # def salary=(salary)
+  #   if salary < 0
+  #     raise "A salary of #{salary} isn't valid!"
+  #   end
+  #   @salary = salary
+  # end
+  #
+  # def initialize(name = "Anonymous", salary = 0.0)
+  #   self.name = name
+  #   self.salary = salary
+  # end
+  #
+  # def print_pay_stub()
+  #   puts "Name: #{name}"
+  #   pay_for_period = (salary / 365.0) * 14
+  #   formatted_pay = format("%.2f", pay_for_period)
+  #   puts "Pay this period: $#{formatted_pay}"
+  # end
+end
+
+# amy = Employee.new
+# amy.name = "Amy Blake"
+# amy.salary = 50000
+# amy.print_pay_stub
+
+# kara = Employee.new
+# kara.name = ""
+#
+# ben = Employee.new
+# ben.salary = -1
+
+# employee = Employee.new("Amy Blake", 66)
+# employee.print_pay_stub
+=end
+
+=begin
+class SalariedEmployee < Employee
+  attr_reader :salary
+
+  def initialize(name, salary = 0.0)
+    super name
+    self.salary = salary
+  end
+
+  def salary=(salary)
+    if salary < 0
+      raise "A salary of #{salary} is not valid."
+    end
+    @salary = salary
+  end
+
+  def print_pay_stub
+    print_name
+    pay_for_period = (salary / 365.0) * 14
+    formatted_pay = format("%.2f", pay_for_period)
+    puts "Pay this period: $#{formatted_pay}"
+  end
+end
+
+salaried_employee = SalariedEmployee.new("Jane Doe", 50000)
+salaried_employee.print_pay_stub
+=end
+
+=begin
+class HourlyEmployee < Employee
+  attr_reader :hourly_wage, :hours_per_week
+
+  def initialize(name, hourly_wage = 0.0, hours_per_week = 0)
+    super name
+    self.hourly_wage = hourly_wage
+    self.hours_per_week = hours_per_week
+  end
+
+  def self.security_guard(name)
+    HourlyEmployee.new(name, 15.00, 40)
+  end
+
+  def self.cashier(name)
+    HourlyEmployee.new(name, 12.00, 40)
+  end
+
+  def self.janitor(name)
+    HourlyEmployee.new(name, 12.85, 40)
+  end
+
+  def hourly_wage=(hourly_wage)
+    if hourly_wage < 0
+      raise "The hourly wage #{hourly_wage} is not valid."
+    end
+    @hourly_wage = hourly_wage
+  end
+
+  def hours_per_week=(hours_per_week)
+    if hours_per_week < 0
+      raise "The hourly wage #{hours_per_week} is not valid."
+    end
+    @hours_per_week = hours_per_week
+  end
+
+  def print_pay_stub
+    print_name
+    pay_for_period = hourly_wage * hours_per_week * 2
+    formatted_pay = format("%.2f", pay_for_period)
+    puts "Pay This Period: #{formatted_pay}"
+  end
+end
+
+# hourly_employee = HourlyEmployee.new("John Smith", 19.50, 40)
+# hourly_employee.print_pay_stub
+
+angela = HourlyEmployee.security_guard("Angela Matthews")
+edwin = HourlyEmployee.janitor("Edwin Burgess")
+ivan = HourlyEmployee.cashier("Ivan Stokes")
+
+angela.print_pay_stub
+edwin.print_pay_stub
+ivan.print_pay_stub
+=end
+
+#03/24/2020
+=begin
+class Human
+  attr_reader :name, :age, :occupation, :skills
+
+  def initialize(name = "Anonymous", age = 0, occupation = "N/A", *skill_arr) # * is a splat operator.
+    self.name = name
+    self.age = age
+    self.occupation = occupation
+    self.skills = skill_arr
+  end
+
+  def name=(name)
+    raise "Name cannot be empty!" if name.empty?
+    @name = name
+  end
+
+  def age=(age)
+    raise "Age cannot be negative number!" if age < 0
+    @age = age
+  end
+
+  def occupation=(occupation)
+    raise "Occupation cannot be empty!" if occupation.empty?
+    @occupation = occupation
+  end
+
+  def skills=(array)
+    if array.is_a?(Array)
+      @skills = array
+    end
+  end
+
+  def set_skills(array)
+    raise "The skill set is empty." if array.empty?
+    @skills = array.join(", ")
+  end
+
+  def print_info
+    puts "Name: #{name}\n" + "Age: #{age}\n" + "Occupation: #{occupation}\n" +
+             "Skills: #{skills.join(", ")}"
+  end
+end
+
+rammy = Human.new("Rammy Jose", 44, "Programmer", "Java", "C#", "Python", "C++", "PHP", "JS", "Ruby")
+# rammy.set_skills(%w[Java C# Python C++ PHP JS Ruby])
+rammy.print_info
+=end
+
+#03/30/2020
+# =begin
+module AcceptsComments
+  def comments
+    @comments ||= []
+  end
+
+  def add_comment(comment)
+    comments << comment
+  end
+end
+
+class Clip
+  include AcceptsComments
+
+  def play
+    puts "Playing #{object_id} ..."
+  end
+end
+
+class Video < Clip
+  attr_accessor :beats_per_minute
+end
+
+class Song < Clip
+  attr_accessor :beats_per_minute
+end
+
+class Photo
+  include AcceptsComments
+
+  def show
+    puts "Displaying #{object_id}..."
+  end
+end
+
+# video = Video.new
+# video.add_comment("Cool slow motion effect!")
+# video.add_comment("Weird ending.")
+# p video.comments
+
+song = Song.new
+song.add_comment("Awesome beat.")
+p song.comments
+#
+# p video.comments, song.comments
+# puts video.play
+#
+# photo = Photo.new
+# puts photo.show
+# =end

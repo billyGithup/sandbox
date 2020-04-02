@@ -129,7 +129,7 @@ print_summary(candidate1)
 # p pairs(["man", "moon", "main"])
 # p pairs(["man", "moon", "good", "night"])
 
-# =begin
+=begin
 contact_data = [
     ["joe@email.com", "123 Main st.", "555-123-4567"],
     ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]
@@ -152,4 +152,34 @@ contact_data.each do |array|
 end
 
 puts contacts
-# =end
+=end
+
+#03/25/2020
+=begin
+# dictionary = {1 => "Uno",
+#               2 => "Dos",
+#               3 => "Tres",
+#               4 => "Cuatro",
+#               5 => "Cinco",
+#               6 => "Seis",
+#               7 => "Siete",
+#               8 => "Ocho",
+#               9 => "Nueve",
+#               10 => "Diez"}
+
+dictionary = {one: "Uno",
+              two: "Dos",
+              three: "Tres",
+              four: "Cuatro",
+              five: "Cinco",
+              six: "Seis",
+              seven: "Siete",
+              eight: "Ocho",
+              nine: "Nueve",
+              ten: "Diez"}
+
+
+dictionary.each do |key, value|
+  puts "#{key} - #{value}"
+end
+=end
